@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+helm-chart
+jenkinsfile
+.gitignore
+README.md
