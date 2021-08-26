@@ -41,6 +41,10 @@ pipeline {
       steps{
         sh "docker rmi $registry:$BUILD_NUMBER"
       }
+    stage('deploy on eks cluster') {
+      steps{
+        sh "helm install hello-world ./helm-chart -f ./helm-chart/values.yaml"
+      }
     }
   }
 }

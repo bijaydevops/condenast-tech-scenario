@@ -8,9 +8,8 @@ COPY . .
 FROM BASE as TEST
 RUN npm install
 RUN npm run lint
-RUN npm run ci
 
 # final production image
 FROM BASE as PROD
-EXPOSE 1337
+EXPOSE 8080
 CMD ["node", "index.js"]

@@ -1,0 +1,40 @@
+
+replicaCount: 1
+
+image:
+  repository: bijay/docker-test:latest
+  tag: latest
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: NodePort
+  exposePort: 30000
+  targetPort: 8080
+  internalPort: 3000
+
+
+ingress:
+  enabled: false
+  annotations: {}
+  hosts:
+    - host: hello-world.local
+      paths: []
+
+  tls: []
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
